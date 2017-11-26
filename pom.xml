@@ -1,0 +1,337 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.thinkme</groupId>
+    <artifactId>parent-pom</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0</version>
+    <name>parent-pom</name>
+
+
+    <properties>
+        <!--以下包更新到2017/11/23 -->
+
+        <java.version>1.8</java.version>
+        <!-- 文件拷贝时的编码 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!-- 编译时的编码 -->
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+        <httpclient.version>4.5.3</httpclient.version>
+        <httpclient.async.version>4.1.3</httpclient.async.version>
+
+        <okhttp.version>3.9.1</okhttp.version>
+        <lombok.version>1.16.18</lombok.version>
+        <!--<hibernate-validator.version>6.0.5.Final</hibernate-validator.version>-->
+        <!--<validation-api.version>2.0.0.Final</validation-api.version>-->
+        <springboot.version>1.5.8.RELEASE</springboot.version>
+        <springframework.version>4.3.9.RELEASE</springframework.version>
+        <javax.servlet-api.version>4.0.0</javax.servlet-api.version>
+        <mybatis-plus.version>2.1.6</mybatis-plus.version>
+        <druid.version>1.1.5</druid.version>
+
+        <guava.version>23.4-jre</guava.version>
+        <commons-lang3.version>3.7</commons-lang3.version>
+        <commons-collections.version>4.1</commons-collections.version>
+        <commons.beanutils.version>1.9.3</commons.beanutils.version>
+        <commons-chain.version>1.2</commons-chain.version>
+        <!--<slf4j.version>1.7.25</slf4j.version>-->
+        <!--<log4j.version>2.9.1</log4j.version>-->
+        <orika.version>1.5.2</orika.version>
+        <jackson.version>2.9.2</jackson.version>
+        <fastjson.version>1.2.41</fastjson.version>
+        <cglib.version>3.2.5</cglib.version>
+        <logback.version>1.2.3</logback.version>
+        <junit.version>4.12</junit.version>
+        <assertj.version>2.8.0</assertj.version>
+        <mockito.version>2.12.0</mockito.version>
+        <powermock.version>1.7.3</powermock.version>
+        <redisson.version>3.5.5</redisson.version>
+        <dom4j.version>1.6.1</dom4j.version>
+        <jaxen.version>1.1.6</jaxen.version>
+
+
+        <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
+        <maven-assembly-plugin.version>3.1.5</maven-assembly-plugin.version>
+        <maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
+        <maven-jar-plugin.version>3.0.2</maven-jar-plugin.version>
+        <maven-javadoc-plugin.version>3.0.0-M1</maven-javadoc-plugin.version>
+        <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
+        <jacoco-maven-plugin.version>0.7.9</jacoco-maven-plugin.version>
+
+        <!-- Plugin的属性 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+    </properties>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.7.RELEASE</version>
+        <!--<version>2.0.0.M6</version>-->
+    </parent>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson</artifactId>
+                <version>${redisson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpmime</artifactId>
+                <version>${httpclient.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpasyncclient</artifactId>
+                <version>${httpclient.async.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>${okhttp.version}</version>
+            </dependency>
+
+            <!--&lt;!&ndash;<dependency>&ndash;&gt;-->
+                <!--&lt;!&ndash;<groupId>log4j</groupId>&ndash;&gt;-->
+                <!--&lt;!&ndash;<artifactId>log4j</artifactId>&ndash;&gt;-->
+                <!--&lt;!&ndash;<version>${log4j.version}</version>&ndash;&gt;-->
+                <!--&lt;!&ndash;<optional>true</optional>&ndash;&gt;-->
+            <!--&lt;!&ndash;</dependency>&ndash;&gt;-->
+
+            <!--&lt;!&ndash; UTILS begin &ndash;&gt;-->
+            <!--&lt;!&ndash; https://mvnrepository.com/artifact/com.google.guava/guava &ndash;&gt;-->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-chain</groupId>
+                <artifactId>commons-chain</artifactId>
+                <version>${commons-chain.version}</version>
+            </dependency>
+            <!--&lt;!&ndash; UTILS end &ndash;&gt;-->
+
+            <!--&lt;!&ndash; LOGGING begin &ndash;&gt;-->
+            <!--&lt;!&ndash;<dependency>&ndash;&gt;-->
+                <!--&lt;!&ndash;<groupId>org.slf4j</groupId>&ndash;&gt;-->
+                <!--&lt;!&ndash;<artifactId>slf4j-api</artifactId>&ndash;&gt;-->
+                <!--&lt;!&ndash;<version>${slf4j.version}</version>&ndash;&gt;-->
+                <!--&lt;!&ndash;<optional>true</optional>&ndash;&gt;-->
+            <!--&lt;!&ndash;</dependency>&ndash;&gt;-->
+            <!--&lt;!&ndash; LOGGING end &ndash;&gt;-->
+
+            <!--&lt;!&ndash; OPTIONAL begin &ndash;&gt;-->
+            <!--&lt;!&ndash; for JsonMapper &ndash;&gt;-->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+                <optional>true</optional>
+            </dependency>
+
+            <!--&lt;!&ndash; for ObjectMapper &ndash;&gt;-->
+            <dependency>
+                <groupId>ma.glasnost.orika</groupId>
+                <artifactId>orika-core</artifactId>
+                <version>${orika.version}</version>
+                <optional>true</optional>
+            </dependency>
+
+            <!--&lt;!&ndash; for FastInvoker &ndash;&gt;-->
+            <dependency>
+                <groupId>cglib</groupId>
+                <artifactId>cglib</artifactId>
+                <version>${cglib.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.apache.ant</groupId>
+                        <artifactId>ant</artifactId>
+                    </exclusion>
+                </exclusions>
+                <optional>true</optional>
+            </dependency>
+
+            <!-- for CommonCollections -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>${commons-collections.version}</version>
+                <optional>true</optional>
+            </dependency>
+            <!-- OPTIONAL end -->
+
+            <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <!-- TEST begin -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.assertj</groupId>
+                <artifactId>assertj-core</artifactId>
+                <version>${assertj.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>${mockito.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.powermock</groupId>
+                <artifactId>powermock-api-mockito</artifactId>
+                <version>${powermock.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.powermock</groupId>
+                <artifactId>powermock-module-junit4</artifactId>
+                <version>${powermock.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!--<dependency>-->
+                <!--<groupId>ch.qos.logback</groupId>-->
+                <!--<artifactId>logback-classic</artifactId>-->
+                <!--<version>${logback.version}</version>-->
+                <!--<scope>test</scope>-->
+            <!--</dependency>-->
+
+            <!--&lt;!&ndash; https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils &ndash;&gt;-->
+            <dependency>
+                <groupId>commons-beanutils</groupId>
+                <artifactId>commons-beanutils</artifactId>
+                <version>${commons.beanutils.version}</version>
+            </dependency>
+
+            <!--&lt;!&ndash; only for XMLMapper test &ndash;&gt;-->
+            <dependency>
+                <groupId>dom4j</groupId>
+                <artifactId>dom4j</artifactId>
+                <version>${dom4j.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>jaxen</groupId>
+                <artifactId>jaxen</artifactId>
+                <version>${jaxen.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${javax.servlet-api.version}</version>
+                <scope>provided</scope>
+                <optional>true</optional>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <!-- 插件声明 -->
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                        <testSource>${java.version}</testSource>
+                        <testTarget>${java.version}</testTarget>
+                    </configuration>
+                    <version>${maven-compiler-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>${maven-resources-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>${maven-jar-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>${maven-javadoc-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>${maven-source-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>${jacoco-maven-plugin.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+    </build>
+
+    <repositories>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/libs-milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+
+</project>
