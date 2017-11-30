@@ -35,6 +35,7 @@
         <commons-collections.version>4.1</commons-collections.version>
         <commons.beanutils.version>1.9.3</commons.beanutils.version>
         <commons-chain.version>1.2</commons-chain.version>
+        <mybatisplus-spring-boot-starter.version>1.0.5</mybatisplus-spring-boot-starter.version>
         <!--<slf4j.version>1.7.25</slf4j.version>-->
         <!--<log4j.version>2.9.1</log4j.version>-->
         <orika.version>1.5.2</orika.version>
@@ -68,8 +69,8 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.7.RELEASE</version>
-        <!--<version>2.0.0.M6</version>-->
+        <!--<version>1.5.7.RELEASE</version>-->
+        <version>2.0.0.M6</version>
     </parent>
 
     <dependencyManagement>
@@ -121,15 +122,7 @@
                 <version>${okhttp.version}</version>
             </dependency>
 
-            <!--&lt;!&ndash;<dependency>&ndash;&gt;-->
-                <!--&lt;!&ndash;<groupId>log4j</groupId>&ndash;&gt;-->
-                <!--&lt;!&ndash;<artifactId>log4j</artifactId>&ndash;&gt;-->
-                <!--&lt;!&ndash;<version>${log4j.version}</version>&ndash;&gt;-->
-                <!--&lt;!&ndash;<optional>true</optional>&ndash;&gt;-->
-            <!--&lt;!&ndash;</dependency>&ndash;&gt;-->
-
-            <!--&lt;!&ndash; UTILS begin &ndash;&gt;-->
-            <!--&lt;!&ndash; https://mvnrepository.com/artifact/com.google.guava/guava &ndash;&gt;-->
+            <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
@@ -203,6 +196,13 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
+            </dependency>
+
+            <!-- mybatis-plus begin -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatisplus-spring-boot-starter</artifactId>
+                <version>${mybatisplus-spring-boot-starter.version}</version>
             </dependency>
 
             <!-- TEST begin -->
