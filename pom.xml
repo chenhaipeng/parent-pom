@@ -50,6 +50,8 @@
         <redisson.version>3.5.5</redisson.version>
         <dom4j.version>1.6.1</dom4j.version>
         <jaxen.version>1.1.6</jaxen.version>
+        <swagger2.version>2.7.0</swagger2.version>
+        <kaptcha.version>2.3.2</kaptcha.version>
 
 
         <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
@@ -273,6 +275,24 @@
                 <version>${javax.servlet-api.version}</version>
                 <scope>provided</scope>
                 <optional>true</optional>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.penggle</groupId>
+                <artifactId>kaptcha</artifactId>
+                <version>${kaptcha.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
