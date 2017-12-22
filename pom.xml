@@ -1,4 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.thinkme</groupId>
@@ -29,6 +29,7 @@
         <javax.servlet-api.version>4.0.0</javax.servlet-api.version>
         <mybatis-plus.version>2.1.6</mybatis-plus.version>
         <druid.version>1.1.5</druid.version>
+        <nutz.version>1.r.63</nutz.version>
 
         <guava.version>23.4-jre</guava.version>
         <commons-lang3.version>3.7</commons-lang3.version>
@@ -142,19 +143,8 @@
                 <artifactId>commons-chain</artifactId>
                 <version>${commons-chain.version}</version>
             </dependency>
-            <!--&lt;!&ndash; UTILS end &ndash;&gt;-->
 
-            <!--&lt;!&ndash; LOGGING begin &ndash;&gt;-->
-            <!--&lt;!&ndash;<dependency>&ndash;&gt;-->
-                <!--&lt;!&ndash;<groupId>org.slf4j</groupId>&ndash;&gt;-->
-                <!--&lt;!&ndash;<artifactId>slf4j-api</artifactId>&ndash;&gt;-->
-                <!--&lt;!&ndash;<version>${slf4j.version}</version>&ndash;&gt;-->
-                <!--&lt;!&ndash;<optional>true</optional>&ndash;&gt;-->
-            <!--&lt;!&ndash;</dependency>&ndash;&gt;-->
-            <!--&lt;!&ndash; LOGGING end &ndash;&gt;-->
-
-            <!--&lt;!&ndash; OPTIONAL begin &ndash;&gt;-->
-            <!--&lt;!&ndash; for JsonMapper &ndash;&gt;-->
+            <!-- for JsonMapper -->
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
@@ -162,7 +152,7 @@
                 <optional>true</optional>
             </dependency>
 
-            <!--&lt;!&ndash; for ObjectMapper &ndash;&gt;-->
+            <!-- for ObjectMapper -->
             <dependency>
                 <groupId>ma.glasnost.orika</groupId>
                 <artifactId>orika-core</artifactId>
@@ -170,7 +160,7 @@
                 <optional>true</optional>
             </dependency>
 
-            <!--&lt;!&ndash; for FastInvoker &ndash;&gt;-->
+            <!-- for FastInvoker -->
             <dependency>
                 <groupId>cglib</groupId>
                 <artifactId>cglib</artifactId>
@@ -241,13 +231,6 @@
                 <scope>test</scope>
             </dependency>
 
-            <!--<dependency>-->
-                <!--<groupId>ch.qos.logback</groupId>-->
-                <!--<artifactId>logback-classic</artifactId>-->
-                <!--<version>${logback.version}</version>-->
-                <!--<scope>test</scope>-->
-            <!--</dependency>-->
-
             <!--&lt;!&ndash; https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils &ndash;&gt;-->
             <dependency>
                 <groupId>commons-beanutils</groupId>
@@ -293,6 +276,13 @@
                 <groupId>com.github.penggle</groupId>
                 <artifactId>kaptcha</artifactId>
                 <version>${kaptcha.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.nutz/nutz -->
+            <dependency>
+                <groupId>org.nutz</groupId>
+                <artifactId>nutz</artifactId>
+                <version>${nutz.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -343,12 +333,21 @@
     </build>
 
     <repositories>
+
+        <repository>
+            <id>alimaven</id>
+            <name>aliyun maven</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
         <repository>
             <id>spring-milestones</id>
             <name>Spring Milestones</name>
             <url>https://repo.spring.io/libs-milestone</url>
             <snapshots>
-                <enabled>false</enabled>
+                <enabled>true</enabled>
             </snapshots>
         </repository>
     </repositories>
