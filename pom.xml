@@ -53,6 +53,7 @@
         <jaxen.version>1.1.6</jaxen.version>
         <swagger2.version>2.7.0</swagger2.version>
         <kaptcha.version>2.3.2</kaptcha.version>
+        <shiro.verion>1.4.0</shiro.verion>
 
 
         <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
@@ -278,12 +279,18 @@
                 <version>${kaptcha.version}</version>
             </dependency>
 
-            <!-- https://mvnrepository.com/artifact/org.nutz/nutz -->
             <dependency>
                 <groupId>org.nutz</groupId>
                 <artifactId>nutz</artifactId>
                 <version>${nutz.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-spring</artifactId>
+                <version>${shiro.verion}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
