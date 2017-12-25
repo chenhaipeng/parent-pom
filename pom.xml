@@ -24,7 +24,6 @@
         <lombok.version>1.16.18</lombok.version>
         <!--<hibernate-validator.version>6.0.5.Final</hibernate-validator.version>-->
         <!--<validation-api.version>2.0.0.Final</validation-api.version>-->
-        <springboot.version>1.5.8.RELEASE</springboot.version>
         <springframework.version>4.3.9.RELEASE</springframework.version>
         <javax.servlet-api.version>4.0.0</javax.servlet-api.version>
         <mybatis-plus.version>2.1.6</mybatis-plus.version>
@@ -73,8 +72,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <!--<version>1.5.7.RELEASE</version>-->
-        <version>2.0.0.M6</version>
+        <version>2.0.0.M7</version>
     </parent>
 
     <dependencyManagement>
@@ -349,15 +347,29 @@
                 <enabled>true</enabled>
             </snapshots>
         </repository>
+        <!-- Add Spring repositories -->
+        <!-- (you don't need this if you are using a .RELEASE version) -->
+        <repository>
+            <id>spring-snapshots</id>
+            <url>http://repo.spring.io/snapshot</url>
+            <snapshots><enabled>true</enabled></snapshots>
+        </repository>
         <repository>
             <id>spring-milestones</id>
-            <name>Spring Milestones</name>
-            <url>https://repo.spring.io/libs-milestone</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
+            <url>http://repo.spring.io/milestone</url>
         </repository>
     </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-snapshots</id>
+            <url>http://repo.spring.io/snapshot</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>spring-milestones</id>
+            <url>http://repo.spring.io/milestone</url>
+        </pluginRepository>
+    </pluginRepositories>
 
 
 </project>
