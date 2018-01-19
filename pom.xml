@@ -32,6 +32,7 @@
 
         <guava.version>23.4-jre</guava.version>
         <commons-lang3.version>3.7</commons-lang3.version>
+        <commons-io.version>2.6</commons-io.version>
         <commons-collections.version>4.1</commons-collections.version>
         <commons.beanutils.version>1.9.3</commons.beanutils.version>
         <commons-chain.version>1.2</commons-chain.version>
@@ -53,6 +54,7 @@
         <swagger2.version>2.7.0</swagger2.version>
         <kaptcha.version>2.3.2</kaptcha.version>
         <shiro.verion>1.4.0</shiro.verion>
+        <spring.verion>4.3.13.release</spring.verion>
 
 
         <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
@@ -139,6 +141,12 @@
             </dependency>
 
             <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>commons-chain</groupId>
                 <artifactId>commons-chain</artifactId>
                 <version>${commons-chain.version}</version>
@@ -150,6 +158,24 @@
                 <artifactId>jackson-databind</artifactId>
                 <version>${jackson.version}</version>
                 <optional>true</optional>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.dataformat</groupId>
+                <artifactId>jackson-dataformat-xml</artifactId>
+                <version>${jackson.version}</version>
             </dependency>
 
             <!-- for ObjectMapper -->
